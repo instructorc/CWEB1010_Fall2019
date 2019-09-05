@@ -3,13 +3,13 @@
     <head><!--Communicates Meta Data Information about your html page-->
         <link rel="icon" href="https://www.ferrari.com/static/favicon.ico">
         <title>Absoulte and Relative File Path Worksheet</title>
+        <!--Example of Implementing External CSS-->
+        <link href="css/style.css" rel="stylesheet" type="text/css">
 
         <!--Internal CSS Method-->
         <style>
-            #footer{
-                background-image: url(images/dunwoodyfooterlogo.png);
-                height: 160px;
-                width: 100%;
+            h1{
+                font-size: 2em;
             }
         </style>
 
@@ -21,29 +21,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body><!--Everything that gets rendered in the browser-->
-        <header>
-            <h1>COURSE: CWEB1010 - Introduction to Web Development</h1>
-            <h1>Utilizing and Understanding Relative and Absolute File Paths</h1>
-            <h1>TERM FALL 2019</h1>
-            <h2>Allotted Time: 10 minutes | Total points: 0 points | 5 questions</h2>
-            <p>Directions: This in-class assignment will focus on understanding relative and absolute file paths.  Please use the diagram below to fill in the correct file path for each of the 5 questions below.</p>
-        </header>
-        <main>
-            <a href="https://www.w3schools.com/html/html_filepaths.asp"><img src="images/filestructure.PNG" alt="picture of file structure"/></a>
-            <hr>
-            <ol>
-                <li>What is the relative <a href="https://www.w3schools.com/html/html_filepaths.asp">file path</a> to bg.jpg file from index.html file?</li>
-                <li>What is the relative file path to logo.png file from index.html file?</li>
-                <li>What is the relative file path to minimize.js from index.html file?</li>
-                <li>What is the relative file path to style.css from index.html?</li>
-                <li>What is the relative file path to banner.jpg from contact.html file?</li>
-            </ol>
+        <div id="container">
+            <header>
+                <h1>COURSE: CWEB1010 - Introduction to Web Development</h1>
+                <h1>Utilizing and Understanding Relative and Absolute File Paths</h1>
+                <h1>TERM FALL 2019</h1>
+                <h2>Allotted Time: 10 minutes | Total points: 0 points | 5 questions</h2>
+                <!--Example of implementing inline css-->
+                <p style="font-weight: 900; color: orangered;">Directions: This in-class assignment will focus on understanding relative and absolute file paths.  Please use the diagram below to fill in the correct file path for each of the 5 questions below.</p>
+            </header>
+            <main>
+                <a href="https://www.w3schools.com/html/html_filepaths.asp"><img src="images/filestructure.PNG" alt="picture of file structure"/></a>
+                <hr>
+                <ol>
+                    <li>What is the relative <a href="https://www.w3schools.com/html/html_filepaths.asp">file path</a> to bg.jpg file from index.html file?</li>
+                    <li>What is the relative file path to logo.png file from index.html file?</li>
+                    <li>What is the relative file path to minimize.js from index.html file?</li>
+                    <li>What is the relative file path to style.css from index.html?</li>
+                    <li>What is the relative file path to banner.jpg from contact.html file?</li>
+                </ol>
 
-        </main>
-        <footer id="footer">
+            </main>
+            <footer id="footer">
 
-            
-        </footer>
-
+                
+            </footer>
+        </div><!--End of container tag-->
     </body>
 </html>

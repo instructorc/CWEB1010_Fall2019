@@ -1,0 +1,9 @@
+/**This is my external style sheet**/
+body{
+    background-image: url(https://content.mlb.com/assets/images/7/2/6/308683726/cuts/1680x900/cut.jpg);
+}
+#container{
+    margin: auto;
+    width: 1000px;
+
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Activity</title>
+        <style>
+            h1{
+                color: blue;
+                font-weight: 900;
+            }
+            em{
+               background-color: orangered; 
+            }
+            p em{
+                text-transform: uppercase;
+                color: aquamarine;
+                background-color: white;
+                text-shadow: 2px 2px 5px #333;
+            }
+
+            h1[class*="some"]{
+                color: red;
+            }
+
+
+            
+        </style>
+    </head>
+    <body>
+        <!--Specific style rules-->
+        <h1 class="something"> This is a fun <em> activity </em> on CSS </h1>
+        <h1 class="somethingelse"> Understanding <em> style rules </em> in CSS </h1>
+        <h1 class="else"> Understanding <em> style rules </em> in CSS </h1>
+    </body>
+</html>

@@ -15,6 +15,17 @@
 
         <!--Implementing Internal CSS Method-->
         <style>
+            /** Style rule that brings in external font **/
+            @font-face {
+            font-family: 'calibril';
+            src: url('fonts/calibril.eot'); /* IE9 Compat Modes */
+            src: url('fonts/calibril.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('fonts/calibril.woff2') format('woff2'), /* Super Modern Browsers */
+                url('fonts/calibril.woff') format('woff'), /* Pretty Modern Browsers */
+                url('fonts/calibril.ttf')  format('truetype'), /* Safari, Android, iOS */
+                url('fonts/calibril.svg#svgFontName') format('svg'); /* Legacy iOS */
+            }
+
             html, body, div, span, object, iframe,
             h1, h2, h3, h4, h5, h6, p, blockquote, pre,
             abbr, address, cite, code,
@@ -37,7 +48,20 @@
             }
 
             body {
-            line-height:1;
+                font-family: 'calibril';
+                line-height:1;
+            }
+            h1 {
+                text-align: center;
+                font-size: 1.8em;
+                line-height: 1.2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                font-weight: 100;
+                text-align: center;
+                line-height: 2em;
             }
 
   
@@ -51,7 +75,7 @@
                 <h1>TERM FALL 2019</h1>
                 <h2>Allotted Time: 10 minutes | Total points: 0 points | 5 questions</h2>
                 <!--Example of Implementing Inline CSS method below-->
-                <p style="font-weight: 900; color: red;">Directions: This in-class assignment will focus on understanding relative and absolute file paths.  Please use the diagram below to fill in the correct file path for each of the 5 questions below.</p>
+                <p style="font-weight: 900; margin-top: 18px; font-size: 1.2em;">Directions: This in-class assignment will focus on understanding relative and absolute file paths.  Please use the diagram below to fill in the correct file path for each of the 5 questions below.</p>
             </header>
             <main>
                 <a href="https://www.w3schools.com/html/html_filepaths.asp" target="_blank"><img src="images/filestructure.PNG" alt="picture of file structure"/></a>

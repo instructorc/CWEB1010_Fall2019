@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pseudo classes and elements</title>
+
+        <!--Add CSS Internally-->
+        <style>
+            img[src*="classic"]{
+                width: 450px;
+                height: 450px;
+                transition: width 5s, height 5s;
+            }
+            img[src*="classic"]:hover{
+                width: 750px;
+                height: 750px;
+                filter: grayscale(100%);
+            }
+            a:link{
+                color: peru;
+                font-size: 2em;
+            }
+
+            a:visited{
+                color: green;
+            
+            }
+            a:active{
+                color: #cd0000;
+                font-size: 10em;
+            }
+            p::selection{
+                background-color:peachpuff;
+                color:orchid;
+            }
+            p::first-letter{
+                font-size: 7em;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #333;
+            }
+            #navstruct{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            a[href*="history"]{
+                border: 2px solid black;
+            }
+
+            a:hover{
+                background-color: orangered;
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+            <nav id="navstruct">
+                <ul> 
+                    <li><a href="isdfsdf.html">Home </a></li>
+                    <li><a href="store_history.html">Story History </a></li>
+                    <li><a href="unit_history.html">Unit History </a></li>
+                </ul>
+                <img src="https://reacttees.com/images/logo1.png/" alt="logo" />
+            </nav>
+
+
+
+        <!--demonstration hover pseudo class-->
+        <img src="https://www.budgetdirect.com.au/blog/wp-content/uploads/2018/05/Header_8-classic-racing-cars-modernised-951x512.jpg" alt=""/>
+
+        <!--demonstrations of link, active and visited pseudo class-->
+        <br>
+        <a href="https://mpr.org">MRP.org</a>
+        <a href="https://espn.com">ESPN.com</a>
+
+        <!--Demonstation of selection pseudo element and first-letter pseudo element-->
+        <p>Introduction to CSS and HTML is coming to a conclusion - on to the good stuff</p>
+
+    </body>
+</html>

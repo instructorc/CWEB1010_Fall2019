@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pseudo Elements and classes </title>
+        <style>
+
+            a:link{
+                color: orangered;
+            }
+
+            a:visited{
+                color: aquamarine;
+                font-size: 3em;
+
+            }
+
+            a:active{
+
+                color: #cd0000;
+                font-size: 10em;
+            }
+
+
+
+
+            img[src*="ruben"]{
+                width: 300px;
+                height: 300px;
+            }
+
+            img[src*="ruben"]:hover{
+                -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+                filter: grayscale(100%);
+                width: 700px;
+                height: 700px;
+                transition: width 5s, height 5s;
+            }
+
+            p::selection{
+                background-color: #cd0000;
+                color: white;
+            }
+            p::first-letter{
+                font-size: 4em;
+                color: #333;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            #navstruct{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            a[href*="history"]{
+                border: 2px solid black;
+            }
+            a:hover{
+                background-color: orangered;
+                color: white;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <!--link, visited, active pseudo classes-->
+        <ul>
+            <li><a href="http://google.com">Google</a></li>
+            <li><a href="https://reacttess.com">React Tees Website</a></li>
+        </ul>
+
+
+
+
+        <nav id="navstruct">
+            <ul> 
+                <li><a href="index.html">Home </a></li>
+                <li><a href="store_history.html">Story History </a></li>
+                <li><a href="unit_history.html">Unit History </a></li>
+            </ul>
+            <img src="https://reacttees.com/images/logo1.png/" alt="logo" />
+        </nav>
+        
+
+
+
+
+
+        <!--Demonstration of hover pseudo class-->
+        <img src="https://ichef.bbci.co.uk/onesport/cps/480/cpsprodpb/7ADD/production/_103235413_rubenloftus-cheek.jpg" alt="">
+
+
+        <!--Selection pseudo element, first letter-->
+        <p>When I hove over the text, I have the capability of changing the selection properties</p>
+    </body>
+
+</html>

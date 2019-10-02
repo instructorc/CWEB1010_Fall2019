@@ -5,11 +5,11 @@
         <title>Basic Structure </title>
         <style>
             .boxes{
-                width: 250px;
+                width: 185px;
                 height: 250px;
                 border-radius: 14px;
                 border: 10px solid #333;
-                margin: 12px;
+                margin: 10px;
                 float: left;
                 background-color: #BDD358;
                 font-weight: bolder;
@@ -34,6 +34,19 @@
                 border: 10px solid black;
                 clear: both;
             }
+            .bg{
+                background-color: purple;
+                height: 290px;
+                clear: both;
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+            #flexcontainer{
+                display: flex;
+                flex-wrap: wrap;
+            }
         </style>
 	</head>
 	<body>
@@ -41,12 +54,23 @@
             <header id="header">
 
             </header>
+        <div id="flexcontainer">
             <div class="boxes"> #1 </div>
             <div class="boxes"> #2 </div>
             <div class="boxes"> #3 </div>
+            <div class="boxes"> #4 </div>
+            <div class="boxes"> #1 </div>
+            <div class="boxes"> #2 </div>
+            <div class="boxes"> #3 </div>
+            <div class="boxes"> #4 </div>
+            <div class="boxes"><img src="https://static.clubs.nfl.com/image/private/t_editorial_landscape_8_desktop_mobile/f_auto/steelers/hnfp0wme0ai7epobhq7h.jpg"> </div>
+        </div><!--End of flex container-->
+        </div><!--end of div wrapper -->
+        <div id="wrapper" class="bg">
             <footer id="footer">
 
             </footer>
-        </div><!--end of div wrapper -->
+        </div>
+       
 	</body>
 </html>

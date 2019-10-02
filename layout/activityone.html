@@ -15,13 +15,41 @@
                 background-color: #BDD358;
                 font-family: Arial, Helvetica, sans-serif;
                 font-weight: bolder;
+                color: white;
+                font-size: 4em;
+                text-align: center;
+                padding-top: 14%;
 
             }
+            #wrapper{
+                width: 900px;
+                margin: 0 auto;
+            }
+            #header{
+                width: 100%;
+                height: 200px;
+                border: 10px solid #333;
+                border-radius: 14px;
+            }
+
+            #footer{
+                width: 100%;
+                height: 200px;
+                border: 10px solid #333;
+                border-radius: 14px;
+                clear: both;
+
+            }
+
         </style>
 	</head>
 	<body>
-		<div class="boxes"> #1 </div>
-		<div class="boxes"> #2 </div>
-		<div class="boxes"> #3 </div>
+        <div id="wrapper">
+            <header id="header"></header>
+            <aside class="boxes"> #1 </aside>
+            <main class="boxes"> #2 </main>
+            <aside class="boxes"> #3 </aside>
+            <footer id="footer"></footer>
+        </div><!--End of wrapper div tag-->
 	</body>
 </html>

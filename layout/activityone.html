@@ -41,14 +41,26 @@
 
             }
 
+            #flexcontainer{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
         </style>
 	</head>
 	<body>
         <div id="wrapper">
             <header id="header"></header>
-            <aside class="boxes"> #1 </aside>
-            <main class="boxes"> #2 </main>
-            <aside class="boxes"> #3 </aside>
+            <div id="flexcontainer">
+                <aside class="boxes"> #1 </aside>
+                <main class="boxes"> #2 </main>
+                <aside class="boxes"> #1 </aside>
+                <main class="boxes"> #2 </main>
+                <aside class="boxes"> #1 </aside>
+                <main class="boxes"> #2 </main>
+                <aside class="boxes"> #1 </aside>
+                <main class="boxes"> #2 </main>
+            </div><!--End of flex container element-->
             <footer id="footer"></footer>
         </div><!--End of wrapper div tag-->
 	</body>

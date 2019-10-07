@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--The head tag communicates information about the html document -->
+        <title>CSS Flexbox </title>
+        <style>
+            #flexcontainer{
+                display: flex;
+                width: 80%;
+                margin: auto;
+                border: 3px solid orangered;
+                justify-content: space-evenly
+            }
+
+            .flexitem{
+                border: 3px solid green;
+                margin: 10px;
+                flex: 1 0 auto;
+                height: 325px;
+            }
+
+        </style>
+	</head>
+	<body>
+        <div id="flexcontainer">
+            <aside class="flexitem"> #1 </aside>
+            <aside class="flexitem"> #2 </aside>
+            <aside class="flexitem"> #3 </aside>
+        </div><!--End of flex contain div element-->
+	</body>
+</html>

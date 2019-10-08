@@ -38,9 +38,49 @@
             footer,header,hgroup,menu,nav,section { 
                 display:block;
             }
+            #flexcontainer{
+                border: 2px solid black;
+                display: flex;
+                flex-wrap: wrap;
+                width: 90%;
+                margin: 0 auto;
+            }
+            #mission{
+                border: 2px solid red;
+                height: 280px;
+                flex: 1 0 100%;
+            }
+            #logo{
+                border: 2px solid blue;
+                flex: 1 0 100%;
+                height: 280px;
+            }
+
+
         </style>
     </head>
     <body>
-
+        <div id="flexcontainer">
+            <!--first box element that contains mission-->
+            <section id="mission">
+                <h1>To preserve, share, and discover: people, stories, and history</h1>
+            </section>
+            <!-- element contains site logo centered in webpage-->
+            <div id="logo">
+                <img src="" alt="">
+            </div>
+            <!--Left box element that contains email registration-->
+            <div>
+                <form></form>
+            </div>
+            <!--right box element that contains download buttons for IOS and andriod-->
+            <aside></aside>
+            <footer>
+                <!--contains copyright info-->
+                <div></div>
+                <!-- footer navigation-->
+                <nav></nav>
+            </footer>
+        </div>
     </body>
 </html>

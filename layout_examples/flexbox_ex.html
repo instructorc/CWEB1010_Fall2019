@@ -5,27 +5,34 @@
         <title>CSS Flexbox </title>
         <style>
             #flexcontainer{
-                display: flex;
+                display: flex; /**Ignites flex**/
                 width: 80%;
                 margin: auto;
                 border: 3px solid orangered;
-                justify-content: space-evenly
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                align-content: space-between;
+                
             }
 
             .flexitem{
                 border: 3px solid green;
                 margin: 10px;
-                flex: 1 0 auto;
+                font-size: 2.6em;
+                flex: 1 0 325px;
                 height: 325px;
             }
 
         </style>
 	</head>
 	<body>
-        <div id="flexcontainer">
+        <div id="flexcontainer"><!--Flex container[A container is needed to create flex items]-->
             <aside class="flexitem"> #1 </aside>
             <aside class="flexitem"> #2 </aside>
             <aside class="flexitem"> #3 </aside>
+            <aside class="flexitem"> #4 </aside>
+            <aside class="flexitem"> #5 </aside>
+            <aside class="flexitem"> #6 </aside>
         </div><!--End of flex contain div element-->
 	</body>
 </html>

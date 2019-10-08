@@ -40,10 +40,48 @@
         nav ul {
             list-style:none;
         }
+        #flexcontainer{
+            border: 2px solid green;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #mission{
+            border: 2px solid red;
+            flex: 1 0 100%;
+            height: 285px;
+
+
+        }
+        #logo{
+            border: 2px solid blue;
+            flex: 1 0 100%;
+            height: 250px;
+        }
         
         </style>
     </head>
     <body>
+        <div id="flexcontainer">
+            <!--section that displays the mission-->
+            <section id="mission">
+                <h1>To preserve, share, and discover: people, stories, and history</h1>
+            </section>
+            <!--Section that holds the site logo-->
+            <div id="logo">
+                <img src="" alt="">
+            </div>
+            <!--Email registration form-->
+            <div></div>
+            <!--Section that provides download buttons for IOS and Andriod-->
+            <section></section>
+            <!--Footer to hold two box elements copywrite and navigation-->
+            <footer>
+                <div><p>CopyWrite stuff</p></div>
+                <nav></nav>
+            </footer>
+        </div>
 
     </body>
 </html>

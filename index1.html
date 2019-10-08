@@ -38,10 +38,51 @@
             footer,header,hgroup,menu,nav,section { 
                 display:block;
             }
+            #flexcontainer{
+                border: 2px solid black;
+                width: 90%;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #mission{
+                border: 2px solid red;
+                flex: 1 0 100%;
+                height: 285px;
+
+            }
+            #logo{
+                border: 2px solid blue;
+                flex: 1 0 100%;
+                height: 300px;
+            }
+
+
+
         
         </style>
     </head>
     <body>
+        <div id="flexcontainer">
+            <section id="mission">
+                <h1> To preserve, share, and discover: people, stories, and history</h1>
+            </section>
+            <div id="logo">
+                <img src="" alt="">
+            </div>
+            <div>
+                <form></form>
+            </div>
+            <!--Andriod and IOS download box element-->
+            <div></div>
+            <footer>
+                <!--Copyright info-->
+                <div></div>
+                <!--Footer navigation-->
+                <nav></nav>
+            </footer>
+
+        </div>
 
     </body>
 </html>

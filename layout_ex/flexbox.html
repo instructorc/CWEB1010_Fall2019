@@ -9,10 +9,13 @@
                 margin: auto;
                 border: 3px solid orangered;
                 display: flex;
+                flex-wrap: wrap;
+                
             }
             .flexitem{
                 border: 3px solid green;
-                flex: 1 0 auto;
+                flex: 1 0 325px;
+                font-size: 2.6em;
                 height: 325px;
                 margin: 10px;
 
@@ -21,9 +24,9 @@
 	</head>
 	<body>
         <div id="flexcontainer">
-            <aside class="flexitem"> #1 </aside>
-            <aside class="flexitem"> #2 </aside>
-            <aside class="flexitem"> #3 </aside>
+            <aside class="flexitem" style="order: 3;"> #1 </aside>
+            <aside class="flexitem" style="order: 1;"> #2 </aside>
+            <aside class="flexitem" style="order: 2;"> #3 </aside>
         </div><!--End of flex container div element-->
 	</body>
 </html>

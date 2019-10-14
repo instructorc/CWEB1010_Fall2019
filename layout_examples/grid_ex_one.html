@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--The head tag communicates information about the html document -->
+        <title>CSS Grid Example One </title>
+        <style>
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                width: 60%;
+                margin: auto;
+                height: 100vh;
+                grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+                grid-template-areas: ". . . ."
+                                    "item1 . . ." 
+                                      "item1 item2 item2 item2" 
+                                      " . item2 item2 item2";
+            }
+
+            #item1{
+                grid-area: item1;
+                background-color: red;
+            }
+
+            #item2{
+                grid-area: item2;
+                background-color: red;
+            }
+
+
+        </style>
+	</head>
+	<body>
+        <div class="grid"><!--Grid container[A container is needed to create grid items]-->
+            <aside id="item1"> Item 1 </aside>
+            <aside id="item2"> Item 2 </aside>
+
+        </div><!--End of grid contain div element-->
+	</body>
+</html>

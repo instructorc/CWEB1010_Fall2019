@@ -11,11 +11,77 @@
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <!--Internal CSS Style method-->
         <style>
+            #gridcontainer{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 100px 500px auto 75px;
+            }
+
+            #header{
+                display: flex;
+                flex-wrap: wrap;
+                border: 2px solid purple;
+                height: 95px;
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row: 1;
+            }
+            #profile_banner{
+                border: 2px solid brown;
+                height: 490px;
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row: 2;
+            }
+            #main_profile_section{
+                border: 2px solid black;
+                height: 600px;
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row: 3;
+            }
+            #profile_footer{
+                border: 2px solid orangered;
+                height: 70px;
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row: 4;
+            }
+
+            /**implementing flexbox for profile header**/
+            #profile_logo{
+                border: 2px solid orangered;
+                height: 60px;
+                margin: 12px 20px;
+                flex: 1 0 185px;
+            }
+            #profile_nav{
+                border: 2px solid orangered;
+                height: 60px;
+                margin: 12px 20px;
+                flex: 2 0 400px;
+            }
+            #profile_interaction{
+                border: 2px solid orangered;
+                height: 60px;
+                margin: 12px 20px;
+                flex: 1 0 175px; 
+            }
 
         </style>
     </head>
     <body>
-
-
+        <div id="gridcontainer">
+            <!--Grid items below-->
+            <header id="header">
+                <!--Flex items below-->
+                <div id="profile_logo"><img src="" alt=""></div>
+                <nav id="profile_nav"></nav>
+                <div id="profile_interaction"></div>
+            </header>
+            <div id="profile_banner"></div>
+            <main id="main_profile_section"></main>
+            <footer id="profile_footer"></footer>
+        </div>
     </body>
 </html>

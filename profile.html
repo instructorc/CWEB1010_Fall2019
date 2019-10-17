@@ -17,27 +17,33 @@
                 grid-template-rows: 100px 500px auto 75px;
 
             }
+            #background{
+                background-image: url(img/profile_splash.jpg);
+                background-size: cover;
+                background-position: center;
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 3;
+            }
             #header{
                 display: flex;
                 background-color: #00000099;
                 backdrop-filter:  blur(4px);
-               /* background-image: url(img/header_bg.png);*/
                 flex-wrap: wrap;
                 border: 2px solid purple;
                 width: 100%;
                 height: 75px;
-                z-index: 1;
+               
                 grid-column-start: 1;
                 grid-column-end: 5;
                 grid-row: 1;
             }
             #banner{
-                background-image: url(img/profile_splash.jpg);
+                
                 border: 2px solid black;
                 width: 100%;
-                margin-top: -100px;
-                background-size: cover;
-                background-position: center;
+
                 grid-column-start: 1;
                 grid-column-end: 5;
                 grid-row: 2;
@@ -110,6 +116,7 @@
 
             </main>
             <footer id="profile_footer"></footer>
+            <div id="background"></div>
         </div>
     </body>
 </html>

@@ -18,13 +18,17 @@
                 grid-template-rows: 100px 500px auto 75px;
             }
 
+
             #header{
                 display: flex;
+                background-color: #00000099;
+                backdrop-filter: blur(5px);
                 flex-wrap: wrap;
                 border: 2px solid purple;
-                height: 95px;
+                height: 75px;
                 grid-column-start: 1;
                 grid-column-end: 5;
+                z-index: 1;
                 grid-row: 1;
             }
             #profile_banner{
@@ -48,23 +52,32 @@
                 grid-column-end: 5;
                 grid-row: 4;
             }
+            #profile_bg{
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                background-image: url(img/profile_splash.jpg);
+                background-position: center center;
+                background-size: cover;
+            }
 
             /**implementing flexbox for profile header**/
             #profile_logo{
                 border: 2px solid orangered;
-                height: 60px;
-                margin: 12px 20px;
+                height: 50px;
+                margin: 12px 50px;
                 flex: 1 0 185px;
             }
             #profile_nav{
                 border: 2px solid orangered;
-                height: 60px;
+                height: 50px;
                 margin: 12px 20px;
                 flex: 2 0 400px;
             }
             #profile_interaction{
                 border: 2px solid orangered;
-                height: 60px;
+                height: 50px;
                 margin: 12px 20px;
                 flex: 1 0 175px; 
             }
@@ -76,13 +89,14 @@
             <!--Grid items below-->
             <header id="header">
                 <!--Flex items below-->
-                <div id="profile_logo"><img src="" alt=""></div>
+                <div id="profile_logo"><img src="img/storyQode_white_logo_profile.png" width="165" alt="story code white profile logo"></div>
                 <nav id="profile_nav"></nav>
                 <div id="profile_interaction"></div>
             </header>
             <div id="profile_banner"></div>
             <main id="main_profile_section"></main>
             <footer id="profile_footer"></footer>
+            <div id="profile_bg"></div>
         </div>
     </body>
 </html>

@@ -22,12 +22,18 @@
                 border: 1px solid red;
                 width: 100%;
                 height: 95px;
+                background-color: #00000080;
                 grid-column-start: 1;
                 grid-column-end: 5;
                 grid-row: 1;
+                z-index: 2;
             }
 
             #banner{
+                background-image: url(img/profile_splash.jpg);
+                background-size: cover;
+                background-position: center;
+                margin-top: -99px;
                 border: 1px solid purple;
                 width: 100%;
                 height: 490px;
@@ -76,6 +82,14 @@
                 height: 65px;
                 margin: 12px 20px;
             }
+            .enableBlur>* {
+                filter: blur(3.2px);
+                -webkit-filter: blur(3px);
+            }
+
+            .disableBlur {
+                filter: blur(0);
+            }
 
 
 
@@ -84,11 +98,11 @@
     <body>
         <div id="gridcontainer">
             <!--Grid items below-->
-            <header id="header">
+            <header id="header" class="enableBlur">
                 <!--Flex items below-->
-                <div id="profile_logo"></div>
-                <nav id="header_nav"></nav>
-                <div id="interaction"></div>
+                <div id="profile_logo" class="disableBlur"><img src="img/storyQode_white_logo_profile.png" width="165" alt="profile logo"></div>
+                <nav id="header_nav" class="disableBlur"></nav>
+                <div id="interaction" class="disableBlur"></div>
             </header>
             <div id="banner"></div>
             <main id="main_home"></main>

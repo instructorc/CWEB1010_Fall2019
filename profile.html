@@ -69,11 +69,23 @@
                 margin: 12px 50px;
                 flex: 1 0 185px;
             }
-            #profile_nav{
+            #profile_nav {
                 border: 2px solid orangered;
                 height: 50px;
                 margin: 12px 20px;
                 flex: 2 0 400px;
+                color: white;
+                padding-top: 10px;
+            }
+            #profile_nav ul{
+                border: 2px solid white;
+                width: 345px;
+                margin: auto;
+            }
+
+            #profile_nav ul li{
+                display: inline;
+                margin: 20px;
             }
             #profile_interaction{
                 border: 2px solid orangered;
@@ -90,7 +102,14 @@
             <header id="header">
                 <!--Flex items below-->
                 <div id="profile_logo"><img src="img/storyQode_white_logo_profile.png" width="165" alt="story code white profile logo"></div>
-                <nav id="profile_nav"></nav>
+                <nav id="profile_nav">
+                    <ul>
+                        <li>Stories</li>
+                        <li>Events</li>
+                        <li>Media</li>
+                        <li>Docs</li>
+                    </ul>
+                </nav>
                 <div id="profile_interaction"></div>
             </header>
             <div id="profile_banner"></div>

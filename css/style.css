@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'SegoeUI-Light';
+    src: url('../fonts/SegoeUI-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/SegoeUI-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/SegoeUI-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/SegoeUI-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/SegoeUI-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -20,6 +30,7 @@ time, mark, audio, video {
 }
 body {
     line-height:1;
+    font-family: 'SegoeUI-Light';
 }
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 

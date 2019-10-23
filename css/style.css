@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'SegoeUI';
-    src: url('../fonts/SegoeUI.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/SegoeUI.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/SegoeUI.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/SegoeUI.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/SegoeUI.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/SegoeUI.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-family: 'SegoeUI-Light';
+    src: url('../fonts/SegoeUILight.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/SegoeUILight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/SegoeUI-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/SegoeUI-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/SegoeUI-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/SegoeUI-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
   }
 
 @font-face {
@@ -17,6 +17,17 @@
          url('../fonts/SegoeUI-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
          url('../fonts/SegoeUI-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
   }
+
+
+@font-face {
+font-family: 'SegoeUIBold';
+src: url('../fonts/SegoeUIBold.eot'); /* IE9 Compat Modes */
+src: url('../fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/SegoeUIBold.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../fonts/SegoeUIBold.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/SegoeUI-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/SegoeUI-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -40,7 +51,7 @@ time, mark, audio, video {
 }
 body {
     line-height:1;
-    font-family: 'SegoeUI';
+    font-family: 'SegoeUI-Light';
 }
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
@@ -68,6 +79,8 @@ nav ul {
     text-align: center;
     font-size: 3.2em;
     margin: 2% 18%;
+    font-weight: 100;
+    line-height: 1.2em;
 }
 #logo{
     border: 2px solid blue;

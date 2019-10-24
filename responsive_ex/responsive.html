@@ -53,6 +53,7 @@
                 }
 
                 section[id*="box"]{
+                    border: none;
                     box-shadow: 2px 2px 10px #333;
                 }
             }
@@ -60,6 +61,16 @@
             @media screen and (max-width: 768px) {
                 #box_one, #box_three, #box_four{
                     height: 375px;
+                }
+
+                #box_one{
+                    background-color: red;
+                }
+                #box_three{
+                    background-color: yellow;
+                }
+                #box_four{
+                    background-color: blue;
                 }
             }
         </style>

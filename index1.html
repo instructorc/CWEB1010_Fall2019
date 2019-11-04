@@ -9,8 +9,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--External CSS Link-->
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/animate.css" type="text/css" rel="stylesheet">
         <!--Internal CSS Style Method-->
         <style>
+            
 
         </style>
     </head>
@@ -32,9 +34,11 @@
             </div>
             <!--Section that provides download buttons for IOS and Andriod-->
             <section class="landing_interaction">
-                <h2>Available to Download Coming Soon!!</h2>
-                <img src="img/apple_badge.png" alt="apple app download button">
-                <img src="img/google_badge.png" alt="google app download button">
+                <h2 >Available to Download Coming Soon!!</h2>
+                <div id="download_icons">
+                    <img src="img/apple_badge.png"  alt="apple app download button">
+                    <img src="img/google_badge.png"  alt="google app download button">
+                </div>
             </section>
             <!--Footer to hold two box elements copywrite and navigation-->
             <footer id="footer">
@@ -42,6 +46,12 @@
                 <nav></nav>
             </footer>
         </div>
+        <script>
 
+            document.addEventListener('mouseover', function(){
+                document.querySelector('img[src*=badge').classList.add('animated', 'fadeInDown');
+            })
+        
+        </script>
     </body>
 </html>

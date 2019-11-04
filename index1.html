@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--External Link to CSS style sheet-->
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/animate.css" rel="stylesheet" type="text/css">
         <!--Internal CSS Style Method-->
         <style>
 
@@ -37,7 +38,7 @@
             <aside class="landing_interaction">
                 <h2>Available to Download Coming Soon!!</h2>
                 <div id="download_icons">
-                    <img src="img/apple_badge.png" width="179" alt="Apple download button">
+                    <img src="img/apple_badge.png"  width="179" alt="Apple download button">
                     <img src="img/google_badge.png" width="199" alt="Google download button">
                 </div>
             </aside>
@@ -55,5 +56,22 @@
                 </nav>
             </footer>
         </div><!--End of flex container div element-->
+        <script>
+            
+            document.querySelector("img[src*=badge").addEventListener('click', function(){
+                var element = document.querySelector("img[src*=badge");
+              
+                if(!element.classList.contains('animated')){
+                    element.classList.add("animated", "bounceIn");  
+                }
+                   
+                
+                
+                
+                    
+                
+            });
+        
+        </script>
     </body>
 </html>

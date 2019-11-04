@@ -47,7 +47,7 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 #flexcontainer{
-    border: 2px solid black;
+    
     display: flex;
     flex-wrap: wrap;
     width: 90%;
@@ -55,7 +55,7 @@ footer,header,hgroup,menu,nav,section {
     height: 100vh;
 }
 #mission{
-    border: 2px solid red;
+    
     flex: 1 0 100%;
     padding-top: 4%;
     padding-bottom: 4%;
@@ -68,7 +68,7 @@ footer,header,hgroup,menu,nav,section {
     font-weight: 100;
 }
 #logo{
-    border: 2px solid blue;
+    
     flex: 1 0 100%;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -76,12 +76,12 @@ footer,header,hgroup,menu,nav,section {
 .landing_interaction{
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid purple;
+    
     flex: 1 0 400px;
     height: 300px;
 }
 .landing_interaction h2 {
-    border: 2px solid gray;
+    
     font-size: 2.5em;
     max-width: 412px;
     text-align: center;
@@ -94,7 +94,7 @@ footer,header,hgroup,menu,nav,section {
 #download_icons{
     width: 415px;
     margin: 0 auto;
-    border: 2px solid green;
+    
 }
 
 #download_icons img{
@@ -103,7 +103,7 @@ footer,header,hgroup,menu,nav,section {
 }
 
 #footer{
-    border: 2px solid orangered;
+    
     flex: 1 0 100%;
     height: 75px;
 }

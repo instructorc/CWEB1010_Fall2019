@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+       <head>
+	
+        <title>Incorporating JS - INLINE </title>
+        <style>
+            div{
+                width: 125px;
+                background-color: #cd0000;
+                padding: 1%;
+                font-size: 2em;
+                color: white;
+            }
+        
+        </style>
+	</head>
+	<body>
+			<div onmouseover="createNewBrowserWindow()"> Click Me </div>
+
+            <script>
+
+                function createNewBrowserWindow(){
+                    document.body.style.backgroundColor = "#cd0000";
+                   var aWindow =  window.open("","", "width=400 height=400");
+
+                   aWindow.resizeTo(250, 250);
+                   aWindow.document.write("<h1>Testing, Testing</h1>");
+                   aWindow.document.body.style.backgroundColor = "#333";
+                   aWindow.document.body.style.color = "white";
+                   aWindow.moveTo(500, 500);  
+                }
+            </script>
+	</body>
+</html>

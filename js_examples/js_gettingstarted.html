@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--Linking to external js -->
+        <script defer src="script.js"> </script>
+        <style>
+            div{
+                background-color: #cd0000;
+                width: 125px;
+                color: white;
+                font-size: 2em;
+                padding: 1%;
+            }
+        
+        </style>
+	</head>
+	<body>
+		<!--Inline JS-->
+        <div onclick="window.alert('Triggered by Inline JS')"> Click Me </div>
+      
+		<!--Internal JS -->
+		<script> 
+			document.getElementsByTagName('div')[0].addEventListener('click', function(){
+		 		document.getElementsByTagName('div')[0].innerHTML ="Triggered by internal JS";
+		 	});
+		 </script> 
+	</body>
+</html>

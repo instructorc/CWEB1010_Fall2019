@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		
+		<title>Simple JS program </title>
+	</head>
+	<body>
+
+        <div style="width: 125px; border: 2px solid;" id="button">Click here</div>
+
+        <h1>Cost</h1>
+        <h2 id="tuition"></h2>
+		<!--Internal script tags-->
+        <script> 
+
+        document.getElementById('button').addEventListener('click', function(){
+
+            var name;
+            name = "C.Fulton";
+
+            var program = "Computer Technology";
+
+            var credits = 20;
+
+            var creditCost = 540;
+
+            var tuition = credits * creditCost;
+
+            window.alert(`Name: ${name}  Program ${program} Credits:  ${credits}`);
+
+            //output info to h2
+            document.getElementById('tuition').innerHTML = tuition;
+
+
+        });
+
+    
+        </script>
+	</body>
+</html>

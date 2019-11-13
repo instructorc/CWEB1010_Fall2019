@@ -6,14 +6,21 @@
 	</head>
 	<body>
 
-			<div onmouseout='window.alert("Triggered by Inline JS"); document.body.style.backgroundColor ="#cd0000"; document.getElementById("something").style.textShadow = "2px 2px 5px green";'> Click Me </div>
+            <div> Click Me </div>
             <section>
                 <h1 id="something">Hello World</h1>
             </section>
 
             <script>
                 //Implementing internal JS
+                var aTarget = document.getElementById("something");
 
+                document.getElementsByTagName('div')[0].addEventListener('mouseout', function (){
+                    window.alert("Triggered by Inline JS"); 
+                    document.body.style.backgroundColor ="#cd0000"; 
+                    aTarget.style.textShadow = "2px 2px 5px green";
+                    aTarget.style.fontSize = "4em";
+                });
                 /*This is
                 a block
                 comment

@@ -15,11 +15,7 @@
         </style>
 	</head>
 	<body>
-            <div onmouseout="
-            window.alert('Hello, JavaScript is easy with practice'); 
-            document.body.style.backgroundColor = '#cd0000'; 
-            document.getElementById('something').style.textShadow = '2px 2px 5px white'; 
-            document.getElementById('something').style.fontSize='2em';"> Click Me 
+            <div> Click Me 
             </div>
             <section>
                 <h1 id="something">Hello World!!</h1>
@@ -28,10 +24,15 @@
             <script>
                //This is interal JavaScript
 
-               /**This is funn
-               stuff to 
-               learn
-               **/ 
+               document.getElementsByTagName('div')[0].addEventListener('mouseout', function(){
+
+                   var aTarget = document.getElementById('something');
+
+                    window.alert('Hello, JavaScript is easy with practice'); 
+                    document.body.style.backgroundColor = '#cd0000'; 
+                    aTarget.style.textShadow = '2px 2px 5px white'; 
+                    aTarget.style.fontSize='2em';
+               });
 
                
 

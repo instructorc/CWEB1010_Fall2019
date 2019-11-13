@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		
+        <title>Simple JS program </title>
+        <style>
+            #button{
+                width: 120px;
+                border: 2px solid;
+            }
+            #addStyle{
+                color: red;
+                font-size: 4em;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="button">Click Here</div>
+        <h1>Tuition Cost:</h1>
+        <h2 id="tuition"> </h2>
+		<!--Internal script tags-->
+        <script> 
+
+            document.getElementById('button').addEventListener('click', function(){
+                var name;
+            
+                name = "C.Fulton";
+                var credits = 20;
+                var program = "Computer Technology"; //Declaring and initializing program
+                var creditCost = 540.00;
+                var tuition = credits * creditCost;
+                name = "Dom";  //Reassigning name variable
+
+                window.alert(`Name: ${name}\n Number of Credits:  ${credits}\nProgram: ${program}`);
+
+                document.getElementById('tuition').innerHTML = `<p id="addStyle">You will pay  $${tuition} </p>`;
+
+            })
+
+        
+        </script>
+	</body>
+</html>

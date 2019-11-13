@@ -7,7 +7,7 @@
 	<body>
 			<div> Click Me </div>
             <section>
-                <h1 id="something">Hello World!!</h1>
+                <h1 id="something" onmouseout="runCommands()">Hello World!!</h1>
             </section>
             <script>
                 //This is internal js
@@ -16,14 +16,14 @@
                 over. We have a break in 
                 2 weeks
                 **/
-               document.getElementsByTagName('div')[0].addEventListener('mouseout', function(){
-
+               
+                function runCommands(){
                     window.alert('Hello, JavaScript is easy with practice'); 
                     document.body.style.backgroundColor = '#cd0000';
                     document.getElementById('something').style.textShadow = '2px 2px 8px white';
                     document.getElementById('something').style.fontSize = '4em';
                     document.getElementById('something').innerHTML = 'The day is almost over'; 
-                });
+                }
             
             </script>
 	</body>

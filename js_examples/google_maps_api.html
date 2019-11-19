@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Google Maps API Example</title>
+        <style>
+            #map{
+                height: 600px;
+                width: 600px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <script>
+        var API_KEY = AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU;
+            //https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/marker-simple
+        function workLocation()
+
+        function initMap(theLat, theLng) {
+        var myLatLng = {lat: parseFloat(theLat), lng: parseFloat(theLng)};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+        
+        </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU&callback=initMap">
+            </script>
+    </body>
+</html>

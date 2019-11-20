@@ -8,29 +8,95 @@
                 height: 600px;
                 width: 600px;
             }
+            .format{
+              width: 100%;
+              height: 100px;
+              background-color: #333;
+            }
+            #flexcontainer{
+              display: flex;
+              width: 100%;
+              height: 650px;
+            }
+            form{
+              flex: 1 0 450px;
+              height: 650px;
+            }
+
         
         </style>
     </head>
     <body>
-        <div id="map"></div>
+        <header class="format"><h1>Google Maps API Example</h1></header>
+        <div id="flexcontainer">
+          <form> 
+            Address:<br>
+            <input type="text" name="place"><br>
+            Target Center:
+            <input type="radio" name="location"><br>
+            Hells Kitchen:
+            <input type="radio" name="location">  
+          </form>
+          <div id="map"></div>
 
+        </div>
+        <footer class="format"></footer>
         <script>
-        var API_KEY = AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU;
-            //https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/marker-simple
-        function workLocation()
+       
+          //AddEventListener Methods to listen for click event
+          document.getElementsByTagName('input')[1].addEventListener('click', targetCenterLocation);
+          document.getElementsByTagName('input')[2].addEventListener('click', hellsKitchenLocation);
+        
+        //Defining a function that will run the statements to change marker for target center on map
+        function targetCenterLocation(){
+            var lat, long, address;
+            address = "600 N 1st Ave, Minneapolis, MN 55403";
+            lat = 44.979407;
+            long = -93.275702;
+            var title = "Target Center";
+            //calling the map method and passing data 
+            initMap(lat, long, title); //calling or involking the method
 
-        function initMap(theLat, theLng) {
+            //target text box to input address
+            document.getElementsByTagName('input')[0].value = address;
+        
+        }
+
+        //Defining a function that will run the statements to change marker for hells kitchen location on map
+        function hellsKitchenLocation(){
+          var lat = 44.974801;
+          var long = -93.272665;
+          var title = "Hells Kitchen";
+          var address = "80 S 9th St, Minneapolis, MN 55402";
+
+          initMap(lat, long, title);  //calling or involking the method
+
+          //target text box to input address
+          document.getElementsByTagName('input')[0].value = address;
+
+
+        }
+
+
+        //Function provided by Google - I modified the function to pass data to initMap for each of the locations
+        function initMap(theLat, theLng, aTitle) {
+
+        //the ParseFloat function ensures that the values will be decimal values
         var myLatLng = {lat: parseFloat(theLat), lng: parseFloat(theLng)};
 
+        //Statement that involkes uses Google's map object and involkes the Map method to display and render map.  The 
+        //map is targeting the element <div id="map">
+        //The second argument is an object that defines properties for the map.
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 17,
           center: myLatLng
         });
 
+        //using the maps object and specifying values for the Marker
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'Hello World!'
+          title: aTitle
         });
       }
         

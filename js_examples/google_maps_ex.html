@@ -7,19 +7,95 @@
                 width: 600px;
                 height: 600px;
             }
+            header{
+                height: 100px;
+                background-color: #333;
+                width: 100%;
+            }
+
+            #container{
+                display: flex;
+                width: 100%;
+                height: 650px;
+
+            }
+            form{
+                flex: 1 0 400px;
+                height: 600px;
+            }
+            footer{
+                height: 100px;
+                width: 100%;
+                background-color: #333;
+            }
         
         </style>
 
     </head>
     <body>
-        <div id="map"></div>
+        <header></header>
+        <div id="container">
+            <form>
+                Place:<br>
+                <input type="text" name="place"><br>
+                US Bank:
+                <input type="radio" id="usbank" name="location"><br>
+                Cathedral: 
+                <input type="radio" id="cathedral" name="location">
+                <!--<select name="cars" size="4" multiple>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="audi">Audi</option>
+                      </select>-->
+
+            </form>
+            <div id="map">
+
+            </div>
+        </div>
+        <footer></footer>
 
         <script>
 
             //AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU
 
-            function initMap() {
-                var myLatLng = {lat: 44.9731417, lng: -93.290254};
+            document.getElementById('usbank').addEventListener('click', usBankLocation);
+            document.getElementById('cathedral').addEventListener('click', cathedralLocation);
+
+            function usBankLocation(){
+                var lat, long, title;
+
+                lat = 44.9737514;
+                long = -93.2600041;
+                title = "US Bank Stadium";
+
+                //call function that changes map location
+                initMap(lat, long, title);
+
+                //change the value for the textbox in form
+                document.querySelector('input[type*="text"').value = title;
+
+
+            }
+
+
+            function cathedralLocation(){
+                var lat, long, title;
+
+                lat = 44.97375;
+                long = -93.275325;
+                title = "Cathedral Basillica";
+
+                initMap(lat, long, title);
+
+                //change the value for the textbox in form
+                document.querySelector('input[type*="text"').value = title;
+
+            }
+
+            function initMap(aLat, aLong, aTitle) {
+                var myLatLng = {lat: parseFloat(aLat), lng: parseFloat(aLong)};
 
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 17,
@@ -29,7 +105,7 @@
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    title: 'Dunwoody College of Technology'
+                    title: aTitle
                 });
             }
             

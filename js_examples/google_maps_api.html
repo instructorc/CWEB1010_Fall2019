@@ -7,19 +7,76 @@
                 width: 600px;
                 height: 600px;
             }
+            .format{
+              width: 100%;
+              height: 100px;
+              background-color: #333;
+            }
+            #flexcontainer{
+              display: flex;
+              height: 650px;
+              width: 100%;
+            }
+            form{
+              flex: 1 0 450px;
+              height: 600px;
+            }
         
         </style>
 
     </head>
     <body>
-        <div id="map"></div>
-
+        <header class="format"></header>
+        <div id="flexcontainer">
+            <form>
+                Address:<br>
+                <input type="text" name="firstname" size="50"><br>
+                The Capital:
+                <input type="radio" name="location"><br>
+                The Convention Center:
+                <input type="radio" name="location">
+            </form>
+            <div id="map"></div>
+        </div>
+        <footer class="format"></footer>
         <script>
 
-            //AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU
+            //Add Event to trigger functions
+            document.getElementsByTagName('input')[1].addEventListener('click', theCapitalLocation);
+            document.getElementsByTagName('input')[2].addEventListener('click', theConventionCenterLocation);
+            function theCapitalLocation(){
+              var long, lat, address;
 
-            function initMap() {
-                var myLatLng = {lat: 44.9731417, lng: -93.290254};
+              lat = 44.955325;
+              long = -93.102254;
+              address = "Minnesota State Capitol, 75 Rev Dr Martin Luther King Jr Boulevard., St Paul, MN 55155";
+              var title = "The Capital Building";
+
+              //Call the google maps initMap function and pass our data to function
+              initMap(lat, long, title);
+              
+              //Target the input text box and set the address value
+              document.getElementsByTagName('input')[0].value = address;
+
+            }
+
+            function theConventionCenterLocation(){
+              var lat = 44.969948;
+              var long = -93.273775;
+              var address = "1301 2nd Ave S, Minneapolis, MN 55403";
+              var title = "The Convention Center";
+
+              //Call the google maps initMap function and pass our data to function
+              initMap(lat, long, title);
+
+              //Target the input text box and set the address value
+              document.getElementsByTagName('input')[0].value = address;
+              
+
+            }
+
+            function initMap(aLat, aLong, aTitle) {
+                var myLatLng = {lat: parseFloat(aLat), lng: parseFloat(aLong)};
 
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 17,
@@ -29,7 +86,7 @@
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    title: 'Dunwoody College of Technology'
+                    title: aTitle
                 });
             }
             

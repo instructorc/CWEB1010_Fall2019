@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Maps API Example</title>
+        <style>
+            #map{
+                width: 600px;
+                height: 600px;
+            }
+        
+        </style>
+
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <script>
+
+            //AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU
+
+            function initMap() {
+                var myLatLng = {lat: 44.9731417, lng: -93.290254};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 17,
+                    center: myLatLng
+                });
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Dunwoody College of Technology'
+                });
+            }
+            
+            
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU&callback=initMap">
+        </script>
+    </body>
+</html>

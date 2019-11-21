@@ -64,14 +64,18 @@
             document.getElementById('cathedral').addEventListener('click', cathedralLocation);
 
             function usBankLocation(){
-                var lat, long, title;
+            
 
-                lat = 44.9737514;
-                long = -93.2600041;
-                title = "US Bank Stadium";
+                var bankLocation = {
 
+                    lat: 44.9737514,
+                    long: -93.2600041,
+                    title: "US Bank Stadium"
+                }
+
+    
                 //call function that changes map location
-                initMap(lat, long, title);
+                initMap(bankLocation);
 
                 //change the value for the textbox in form
                 document.querySelector('input[type*="text"').value = title;
@@ -81,21 +85,25 @@
 
 
             function cathedralLocation(){
-                var lat, long, title;
+              
+                var cathedralLocation = {
+                    lat: 44.97375,
+                    long: -93.275325,
+                    title: "Cathedral Basillica"
 
-                lat = 44.97375;
-                long = -93.275325;
-                title = "Cathedral Basillica";
+                }
 
-                initMap(lat, long, title);
+        
+
+                initMap(cathedralLocation);
 
                 //change the value for the textbox in form
                 document.querySelector('input[type*="text"').value = title;
 
             }
 
-            function initMap(aLat, aLong, aTitle) {
-                var myLatLng = {lat: parseFloat(aLat), lng: parseFloat(aLong)};
+            function initMap(aObject) {
+                var myLatLng = {lat: parseFloat(aObject.lat), lng: parseFloat(aObject.long)};
 
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 17,
@@ -105,7 +113,7 @@
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    title: aTitle
+                    title: aObject.title
                 });
             }
             

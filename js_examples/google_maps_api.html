@@ -32,10 +32,13 @@
           <form> 
             Address:<br>
             <input type="text" name="place"><br>
-            Target Center:
-            <input type="radio" name="location"><br>
-            Hells Kitchen:
-            <input type="radio" name="location">  
+            Please select location: <br>
+            <select onchange="getLocation(this.value)">
+              <option value="none">Please selection option below:</option>
+              <option value="target">Target Center</option>
+              <option value="kitchen">Hells Kitchen</option>
+
+            </select>
           </form>
           <div id="map"></div>
 
@@ -44,11 +47,44 @@
         <script>
        
           //AddEventListener Methods to listen for click event
-          document.getElementsByTagName('input')[1].addEventListener('click', targetCenterLocation);
-          document.getElementsByTagName('input')[2].addEventListener('click', hellsKitchenLocation);
+          //document.getElementsByTagName('input')[1].addEventListener('click', targetCenterLocation);
+          //document.getElementsByTagName('input')[2].addEventListener('click', hellsKitchenLocation);
         
+        function getLocation(aValue){
+
+          var mapLocations = [
+              {
+                  address: "600 N 1st Ave, Minneapolis, MN 55403",
+                  lat: 44.979407,
+                  long: -93.275702,
+                  title: "Target Center"
+
+              },
+              {
+                lat: 44.974801,
+                long:-93.272665,
+                title:"Hells Kitchen",
+                address: "80 S 9th St, Minneapolis, MN 55402"
+              }
+
+          ];
+
+          //Decision Making Logic
+          if(aValue == "target"){
+            initMap(mapLocations[0]);
+            //target text box to input address
+            document.getElementsByTagName('input')[0].value = mapLocations[0].address;
+          }else if(aValue == "kitchen"){
+            initMap(mapLocations[1]);
+            //target text box to input address
+            document.getElementsByTagName('input')[0].value = mapLocations[1].address;
+          }else{
+            console.log("No location was indicated");
+          }
+
+        }
         //Defining a function that will run the statements to change marker for target center on map
-        function targetCenterLocation(){
+        /**function targetCenterLocation(){
 
 
             var targetLocation = {
@@ -85,7 +121,7 @@
           document.getElementsByTagName('input')[0].value = hellsLocation.address;
 
 
-        }
+        }**/
 
 
         //Function provided by Google - I modified the function to pass data to initMap for each of the locations

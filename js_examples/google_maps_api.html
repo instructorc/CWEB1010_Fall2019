@@ -23,18 +23,20 @@
             }
         
         </style>
-
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
     </head>
     <body>
         <header class="format"></header>
         <div id="flexcontainer">
-            <form>
-                Address:<br>
-                <input type="text" name="firstname" size="50"><br>
-                The Capital:
-                <input type="radio" name="location"><br>
-                The Convention Center:
-                <input type="radio" name="location">
+            <form class="pure-form">
+                <fieldset>
+                  Address:<br>
+                  <input type="text" name="firstname" size="50"><br>
+                  The Capital:
+                  <input type="radio" name="location"><br>
+                  The Convention Center:
+                  <input type="radio" name="location">
+                </fieldset>
             </form>
             <div id="map"></div>
         </div>
@@ -45,38 +47,52 @@
             document.getElementsByTagName('input')[1].addEventListener('click', theCapitalLocation);
             document.getElementsByTagName('input')[2].addEventListener('click', theConventionCenterLocation);
             function theCapitalLocation(){
-              var long, lat, address;
 
-              lat = 44.955325;
-              long = -93.102254;
-              address = "Minnesota State Capitol, 75 Rev Dr Martin Luther King Jr Boulevard., St Paul, MN 55155";
-              var title = "The Capital Building";
+              var capitalLocation = {
+                lat:44.955325,
+                long: -93.102254,
+                address: "Minnesota State Capitol, 75 Rev Dr Martin Luther King Jr Boulevard., St Paul, MN 55155",
+                title: "The Capital Building"
+              }
+
 
               //Call the google maps initMap function and pass our data to function
-              initMap(lat, long, title);
+              initMap(capitalLocation);
               
               //Target the input text box and set the address value
-              document.getElementsByTagName('input')[0].value = address;
+              document.getElementsByTagName('input')[0].value = capitalLocation.address;
 
             }
 
             function theConventionCenterLocation(){
-              var lat = 44.969948;
-              var long = -93.273775;
-              var address = "1301 2nd Ave S, Minneapolis, MN 55403";
-              var title = "The Convention Center";
+
+              var conventionLocation ={
+                lat: 44.969948,
+                long:-93.273775,
+                address:"1301 2nd Ave S, Minneapolis, MN 55403",
+                title: "The Convention Center",
+                rooms: [
+                  {
+                    name: "red room",
+                    level: 5
+                  },
+                  {
+                    name: "orange room",
+                    level: 5
+                  }
+                ]
+              }
+  
 
               //Call the google maps initMap function and pass our data to function
-              initMap(lat, long, title);
+              initMap(conventionLocation);
 
               //Target the input text box and set the address value
-              document.getElementsByTagName('input')[0].value = address;
-              
-
+              document.getElementsByTagName('input')[0].value = conventionLocation.address;
             }
 
-            function initMap(aLat, aLong, aTitle) {
-                var myLatLng = {lat: parseFloat(aLat), lng: parseFloat(aLong)};
+            function initMap(aObject) {
+                var myLatLng = {lat: parseFloat(aObject.lat), lng: parseFloat(aObject.long)};
 
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 17,
@@ -86,7 +102,7 @@
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    title: aTitle
+                    title: aObject.title
                 });
             }
             

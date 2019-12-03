@@ -38,16 +38,13 @@
             <form>
                 Place:<br>
                 <input type="text" name="place"><br>
-                US Bank:
-                <input type="radio" id="usbank" name="location"><br>
-                Cathedral: 
-                <input type="radio" id="cathedral" name="location">
-                <!--<select name="cars" size="4" multiple>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
-                      </select>-->
+                Please select location: <br>
+               <select name="locations" onchange="mapLocation(this.value)" >
+                    <option value="none">Please select location</option>
+                    <option value="bank">US Bank</option>
+                    <option value="cathedral">The Cathedral Basillica</option>
+                    
+                </select>
 
             </form>
             <div id="map">
@@ -60,10 +57,41 @@
 
             //AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU
 
-            document.getElementById('usbank').addEventListener('click', usBankLocation);
-            document.getElementById('cathedral').addEventListener('click', cathedralLocation);
+            //document.getElementById('usbank').addEventListener('click', usBankLocation);
+            //document.getElementById('cathedral').addEventListener('click', cathedralLocation);
 
-            function usBankLocation(){
+            function mapLocation(aValue){
+
+                var locationArray = [
+                    {
+                        lat: 44.9737514,
+                        long: -93.2600041,
+                        title: "US Bank Stadium"
+                    },
+                    {
+                        lat: 44.97375,
+                        long: -93.275325,
+                        title: "Cathedral Basillica"
+
+                    }
+                ];
+                //Decision Making Logic
+                if(aValue == "bank"){
+                    initMap(locationArray[0]);
+                    document.querySelector('input[type*="text"').value = locationArray[0].title;
+                }else if(aValue == "cathedral"){
+                    initMap(locationArray[1]);
+                    document.querySelector('input[type*="text"').value = locationArray[1].title;
+                }else{
+                    console.log("Something went wrong");
+                }
+
+               
+
+
+            }
+
+            /**function usBankLocation(){
             
 
                 var bankLocation = {
@@ -78,7 +106,7 @@
                 initMap(bankLocation);
 
                 //change the value for the textbox in form
-                document.querySelector('input[type*="text"').value = title;
+                document.querySelector('input[type*="text"').value = bankLocation.title;
 
 
             }
@@ -98,11 +126,12 @@
                 initMap(cathedralLocation);
 
                 //change the value for the textbox in form
-                document.querySelector('input[type*="text"').value = title;
+                document.querySelector('input[type*="text"').value = cathedralLocation.title;
 
-            }
+            }**/
 
             function initMap(aObject) {
+                console.log(aObject.title);
                 var myLatLng = {lat: parseFloat(aObject.lat), lng: parseFloat(aObject.long)};
 
                 var map = new google.maps.Map(document.getElementById('map'), {

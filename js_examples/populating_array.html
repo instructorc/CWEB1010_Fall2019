@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Maps API Example</title>
+        <style>
+            #map{
+                width: 600px;
+                height: 600px;
+            }
+            header{
+                height: 100px;
+                background-color: #333;
+                width: 100%;
+            }
+
+            #container{
+                display: flex;
+                width: 100%;
+                height: 650px;
+
+            }
+            form{
+                flex: 1 0 400px;
+                height: 600px;
+            }
+            footer{
+                height: 100px;
+                width: 100%;
+                background-color: #333;
+            }
+        
+        </style>
+
+    </head>
+    <body>
+        <header></header>
+        <div id="container">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <footer></footer>
+        <script>
+            var groceryList = [];
+            var listItems = document.getElementsByTagName('li');
+            //while Loop
+            var x = 0;
+            while(x < 5){  //condition   
+                var userInput = window.prompt("Please enter a grocery item #" + (x+1));
+                groceryList.push(userInput);      
+                x++;
+            }
+            //for loop
+            for(var i = 0; i < groceryList.length; i++){
+                listItems[i].innerHTML = groceryList[i];
+                
+            }
+
+            //do-while loop
+
+        </script>
+    </body>
+</html>

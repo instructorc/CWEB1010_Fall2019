@@ -32,10 +32,12 @@
                 <fieldset>
                   Address:<br>
                   <input type="text" name="firstname" size="50"><br>
-                  The Capital:
-                  <input type="radio" name="location"><br>
-                  The Convention Center:
-                  <input type="radio" name="location">
+                  Please select location: <br>
+                  <select onchange="getLocation(this.value)">
+                    <option value="none">Please select item below</option>
+                    <option value="capital">The Capital </option>
+                    <option value="convention">The Convention Center</option>
+                  </select>
                 </fieldset>
             </form>
             <div id="map"></div>
@@ -43,8 +45,53 @@
         <footer class="format"></footer>
         <script>
 
+          function getLocation(aValue){
+
+            var arrayLocations =[
+              {
+                lat:44.955325,
+                long: -93.102254,
+                address: "Minnesota State Capitol, 75 Rev Dr Martin Luther King Jr Boulevard., St Paul, MN 55155",
+                title: "The Capital Building"
+              },
+              {
+                lat: 44.969948,
+                long:-93.273775,
+                address:"1301 2nd Ave S, Minneapolis, MN 55403",
+                title: "The Convention Center",
+                rooms: [
+                  {
+                    name: "red room",
+                    level: 5
+                  },
+                  {
+                    name: "orange room",
+                    level: 5
+                  }
+                ]
+              }
+            ];
+
+            //Decision Making Logic
+            if(aValue == "capital"){
+              initMap(arrayLocations[0]);
+              //Target the input text box and set the address value
+              document.getElementsByTagName('input')[0].value = arrayLocations[0].address;
+            }else if(aValue =="convention"){
+              initMap(arrayLocations[1]);
+              //Target the input text box and set the address value
+              document.getElementsByTagName('input')[0].value = arrayLocations[1].address;
+            }else{
+              console.log("Neither capital or convention was selected");
+            }
+
+            //Call the google maps initMap function and pass our data to function
+            initMap(capitalLocation);
+
+          }
+
             //Add Event to trigger functions
-            document.getElementsByTagName('input')[1].addEventListener('click', theCapitalLocation);
+            /**document.getElementsByTagName('input')[1].addEventListener('click', theCapitalLocation);
             document.getElementsByTagName('input')[2].addEventListener('click', theConventionCenterLocation);
             function theCapitalLocation(){
 
@@ -89,7 +136,7 @@
 
               //Target the input text box and set the address value
               document.getElementsByTagName('input')[0].value = conventionLocation.address;
-            }
+            }**/
 
             function initMap(aObject) {
                 var myLatLng = {lat: parseFloat(aObject.lat), lng: parseFloat(aObject.long)};

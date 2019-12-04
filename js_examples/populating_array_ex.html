@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Maps API Example</title>
+        <style>
+            #map{
+                width: 600px;
+                height: 600px;
+            }
+            .format{
+              width: 100%;
+              height: 100px;
+              background-color: #333;
+            }
+            #flexcontainer{
+              display: flex;
+              height: 650px;
+              width: 100%;
+            }
+            form{
+              flex: 1 0 450px;
+              height: 600px;
+            }
+        
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    </head>
+    <body>
+        <header class="format"></header>
+        <div id="flexcontainer">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <footer class="format"></footer>
+        <script>
+            var groceryList = [];
+
+            //While Loop to populate the array
+            var i = 0;  //Initial Starting Value
+
+            while(i < 5){ //Condition
+                var userInput= window.prompt("Please enter grocery item # " + (i +1));
+                groceryList.push(userInput);
+                i++;
+            }
+            var itemList = document.getElementsByTagName('li');
+            //For Loop to Process the array and output the array values
+            for(var x = 0; x < groceryList.length; x++){
+                itemList[x].innerHTML = groceryList[x];
+            }
+
+        </script>
+    </body>
+</html>

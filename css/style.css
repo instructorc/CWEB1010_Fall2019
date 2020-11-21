@@ -67,47 +67,44 @@ footer,header,hgroup,menu,nav,section {
     max-width: 865px;
     font-weight: 100;
 }
-#logo{
-    
+#logo{  
     flex: 1 0 100%;
-    padding-top: 3%;
     padding-bottom: 3%;
 }
 .landing_interaction{
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
     flex: 1 0 400px;
-    height: 300px;
+    margin-bottom: 30px;
 }
 .landing_interaction h2 {
     flex: 1 0 100%;
-    font-size: 2.5em;
-    max-width: 412px;
+    font-size: 2.3em;
+    /* max-width: 412px; */
     text-align: center;
     font-weight: 100;
     margin: auto;
-    padding: 3% 10%;
-    min-height: 100px;
-    line-height: 1.3em;
+
+    line-height: 1.2em;
 }
 #download_icons{
-    width: 415px;
+    width: 420px;
     margin: 0 auto;
-    
+    margin-top: 3%;
 }
 
 #download_icons img{
     float: left;
-    margin: 0px 2%;
+    margin: auto;
+    margin-left: 4%;
 }
 
 /**Form Style Rules **/
 #mc_embed_signup{
-    border: 1px solid red;
     margin: auto;
-    margin-top: -65px;
-
+    flex: 1 0 100%;
+    max-width: 450px;
+    margin-top: 3%;
 }
 #mc-embedded-subscribe-form{
     max-width: 700px;
@@ -119,13 +116,11 @@ input#mce-EMAIL, #mce-FNAME, #mce-LNAME {
     background-color: #eee;
     border-radius: 4px;
     outline: none;
-    
     padding: 3%;
     font-size: 1.4em;
-    width: 140px;
+    width: 42%;
     margin-bottom: 4%;
-    float: left;
-    font-family: 'SegoeUI-Light';
+    font-family: 'SegoeUI-Light', Arial, Helvetica, sans-serif;
 }
 
 input::placeholder {
@@ -135,11 +130,10 @@ input::placeholder {
     border: none;
     background-color: black;
     color: white;
-    padding: 3%;
+    padding: 4%;
     display: block;
     width: 100%;
-    margin-top: 3%;
-    border-radius: 3px;
+    border-radius: 6px;
     font-weight: 900;
     font-size: 1.4em;
 }
@@ -148,7 +142,7 @@ input::placeholder {
 }
 
 #footer{
-    
+    margin-top: 1%;
     flex: 1 0 100%;
     height: 75px;
 }
@@ -187,4 +181,32 @@ input::placeholder {
 #logo img{
     display: block;
     margin: auto;
+}
+
+/* smaller than 768 pixels */
+@media screen and (max-width: 768px) {
+    .landing_interaction{
+        margin-bottom: 8%;
+    }
+
+    #mission h1 {
+        font-size: 3em;
+    }
+    #copyright {
+        margin-top: 3%;
+    }
+    #footer nav {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+    #logo img {
+
+        margin-bottom:22%;
+    }
+}
+/* smaller than 480 pixels */
+@media screen and (max-width: 500px) {
+    #logo img {
+        width: 325px;
+    }
 }

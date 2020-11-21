@@ -108,7 +108,9 @@ footer,header,hgroup,menu,nav,section {
     height: 75px;
 }
 #footer nav{
-    float: left;
+    float: right;
+    font-weight: 900;
+    letter-spacing: 3px;
 }
 
 #footer nav ul {
@@ -122,6 +124,15 @@ footer,header,hgroup,menu,nav,section {
 }
 #footer nav ul li a{
     text-decoration: none;
+    color: black;
+}
+#footer nav ul li a:visited{
+   
+    color: black;
+}
+#footer nav ul li a:hover{
+    padding-top: 1%;
+    border-top: 1px solid black;
 }
 #copyright{
     float: left;

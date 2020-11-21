@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Activity</title>
+        <!--Implementing Internal CSS-->
+        <style>
+            h1{
+                color: blue;
+                font-weight: 900;
+            }
+
+            em{
+                background-color: orangered;
+
+            }
+
+            p em{
+                text-transform: uppercase;
+                color: aquamarine;
+            }
+
+            h1[class*="some"]{
+                color: red;
+                text-shadow: 2px 2px 5px #333;
+            }
+        </style>
+    </head>
+    <body>
+        <!--Specific style rules-->
+        <h1 class="something"> This is a fun <em> activity </em> on CSS </h1>
+        <h1 class="anotherValue"> Understanding <em> style rules </em> in CSS </h1>
+        <h1 class="somethingelse">This is some more text</h1>
+
+        
+    </body>
+</html>

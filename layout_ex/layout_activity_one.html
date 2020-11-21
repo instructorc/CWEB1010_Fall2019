@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--The head tag communicates information about the html document -->
+        <title>CSS Flexbox </title>
+        <style>
+            #flexcontainer{
+                width: 80%;
+                margin: auto;
+                border: 3px solid orangered;
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+
+           .flexitem{
+               border: 3px solid green;
+               flex: 1 0 325px; /**Short-hand property the first position is the flex-grow, second is flex-shrink and third is flex-basis**/
+               height: 325px;
+               font-size: 2.6em;
+               margin: 10px;
+
+           }
+        
+        </style>
+	</head>
+	<body>
+        <div id="flexcontainer">
+            <aside class="flexitem" style="order: 3;"> #1 </aside>
+            <aside class="flexitem" style="order: 1;"> #2 </aside>
+            <aside class="flexitem" style="order: 2;"> #3 </aside>
+        </div><!-- End of flex container dev element-->
+	</body>
+</html>

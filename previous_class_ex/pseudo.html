@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Pseudo elements and classes example</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <!--Internal CSS-->
+        <style>
+
+            img[src*="ssl"]{
+                -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+                filter: grayscale(100%);
+                width: 450px;
+                height: 450px;
+                transition: width 5s, height 5s;
+            }
+
+            img[src*="ssl"]:hover{
+               /* transition: width 5s, height 5s;*/
+                filter: none;
+                width: 700px;
+                height: 700px;
+            }
+
+            a:link{
+                color: orangered;
+
+            }
+            a:visited{
+                color: aquamarine;
+            }
+            a:active{
+                color: #cd0000;
+                font-size: 8em;
+            }
+
+            p::selection{
+                background-color: purple;
+                color: peru;
+
+            }
+
+            p::first-letter{
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 6em;
+                color: #333;
+            }
+
+            #navstruct{
+                font-family: Arial, Helvetica, sans-serif;
+
+            }
+
+            a[href*="history"]{
+                border: 2px solid black;
+            }
+
+            a:hover{
+                background-color: orangered;
+                color: white;
+            }
+        
+        </style>
+    </head>
+    <body>
+            <nav id="navstruct">
+                <ul> 
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="store_history.html">Story History </a></li>
+                    <li><a href="unit_history.html">Unit History </a></li>
+                </ul>
+                <img src="https://reacttees.com/images/logo1.png/" alt="logo" />
+            </nav>
+
+
+
+
+
+
+
+        <!--Example of hover pseudo class-->
+        <img src="https://images-na.ssl-images-amazon.com/images/I/51SleU7VuoL._SX425_.jpg" alt=""/>
+
+        
+        <!--link, visited, active pseudo classes-->
+        <a href="http://google.com">Google.com</a>
+        <a href="https://reacttees.com">React Tees</a>
+        
+        <div>
+            <label>Name:</label>
+            <input type="text" ng-model="yourName" placeholder="Enter a name here">
+            <hr>
+            <h1>Hello {{yourName}}!</h1>
+          </div>
+
+
+        <!--selection, first letter -->
+        <p>This is the conclusion of CSS presentation!!</p>
+    </body>
+</html>

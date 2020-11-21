@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Google Maps API Example</title>
+        <style>
+            #map{
+                height: 600px;
+                width: 600px;
+            }
+            .format{
+              width: 100%;
+              height: 100px;
+              background-color: #333;
+            }
+            #flexcontainer{
+              display: flex;
+              width: 100%;
+              height: 650px;
+            }
+            form{
+              flex: 1 0 450px;
+              height: 650px;
+            }
+
+        
+        </style>
+    </head>
+    <body>
+        <header class="format"><h1>Google Maps API Example</h1></header>
+        <div id="flexcontainer">
+          <form> 
+            Address:<br>
+            <input type="text" name="place"><br>
+            Please select location: <br>
+            <select onchange="getLocation(this.value)">
+              <option value="none">Please selection option below:</option>
+              <option value="target">Target Center</option>
+              <option value="kitchen">Hells Kitchen</option>
+
+            </select>
+          </form>
+          <div id="map"></div>
+
+        </div>
+        <footer class="format"></footer>
+        <script>
+       
+          //AddEventListener Methods to listen for click event
+          //document.getElementsByTagName('input')[1].addEventListener('click', targetCenterLocation);
+          //document.getElementsByTagName('input')[2].addEventListener('click', hellsKitchenLocation);
+        
+        function getLocation(aValue){
+
+          var mapLocations = [
+              {
+                  address: "600 N 1st Ave, Minneapolis, MN 55403",
+                  lat: 44.979407,
+                  long: -93.275702,
+                  title: "Target Center"
+
+              },
+              {
+                lat: 44.974801,
+                long:-93.272665,
+                title:"Hells Kitchen",
+                address: "80 S 9th St, Minneapolis, MN 55402"
+              }
+
+          ];
+
+          //Decision Making Logic
+          if(aValue == "target"){
+            initMap(mapLocations[0]);
+            //target text box to input address
+            document.getElementsByTagName('input')[0].value = mapLocations[0].address;
+          }else if(aValue == "kitchen"){
+            initMap(mapLocations[1]);
+            //target text box to input address
+            document.getElementsByTagName('input')[0].value = mapLocations[1].address;
+          }else{
+            console.log("No location was indicated");
+          }
+
+        }
+        //Defining a function that will run the statements to change marker for target center on map
+        /**function targetCenterLocation(){
+
+
+            var targetLocation = {
+              address: "600 N 1st Ave, Minneapolis, MN 55403",
+              lat: 44.979407,
+              long: -93.275702,
+              title: "Target Center"
+
+            }
+         
+
+            //calling the map method and passing data 
+            initMap(targetLocation); //calling or involking the method
+
+            //target text box to input address
+            document.getElementsByTagName('input')[0].value = targetLocation.address;
+        
+        }
+
+        //Defining a function that will run the statements to change marker for hells kitchen location on map
+        function hellsKitchenLocation(){
+
+          var hellsLocation ={
+            lat: 44.974801,
+            long:-93.272665,
+            title:"Hells Kitchen",
+            address: "80 S 9th St, Minneapolis, MN 55402"
+          }
+
+
+          initMap(hellsLocation);  //calling or involking the method
+
+          //target text box to input address
+          document.getElementsByTagName('input')[0].value = hellsLocation.address;
+
+
+        }**/
+
+
+        //Function provided by Google - I modified the function to pass data to initMap for each of the locations
+        function initMap(aObject) {
+
+        //the ParseFloat function ensures that the values will be decimal values
+        var myLatLng = {lat: parseFloat(aObject.lat), lng: parseFloat(aObject.long)};
+
+        //Statement that involkes uses Google's map object and involkes the Map method to display and render map.  The 
+        //map is targeting the element <div id="map">
+        //The second argument is an object that defines properties for the map.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: myLatLng
+        });
+
+        //using the maps object and specifying values for the Marker
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: aObject.title
+        });
+      }
+        
+        </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdolB5KKHFGxVTNuJpcd6a4J0dBehKMFU&callback=initMap">
+            </script>
+    </body>
+</html>

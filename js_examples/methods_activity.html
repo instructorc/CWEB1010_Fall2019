@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+       <head>
+	
+		<title>Working with named Functions</title>
+	</head>
+	<body>
+		<div id="click"> Click Me </div>
+        <script>
+            
+            document.getElementById('click').addEventListener('click', pageDetails);
+
+
+
+
+            function pageDetails(){
+                var doctype = document.doctype.name;
+                var title = document.title;
+                var URL = document.URL;
+
+                document.write(`Doctype: <h2 style="color: orangered;">${doctype}</h2> Title: <h2 style="color: orangered;">${title}</h2> URL: <h2 style="color: orangered;">${URL}</h2>`);
+               
+            }
+        
+        </script>
+	</body>
+</html>

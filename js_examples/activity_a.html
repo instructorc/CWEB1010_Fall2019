@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+       <head>
+	
+        <title>Incorporating JS - INLINE </title>
+        <style>
+            div{
+                width: 125px;
+                background-color: #cd0000;
+                padding: 1%;
+                font-size: 2em;
+                color: white;
+            }
+        
+        </style>
+	</head>
+	<body>
+            <div> Click Me 
+            </div>
+            <section>
+                <h1 id="something">Hello World!!</h1>
+            </section>
+
+            <script>
+               //This is interal JavaScript
+
+               document.getElementsByTagName('div')[0].addEventListener('mouseout', function(){
+
+                   var aTarget = document.getElementById('something');
+
+                    window.alert('Hello, JavaScript is easy with practice'); 
+                    document.body.style.backgroundColor = '#cd0000'; 
+                    aTarget.style.textShadow = '2px 2px 5px white'; 
+                    aTarget.style.fontSize='2em';
+               });
+
+               
+
+            </script>
+	</body>
+</html>
